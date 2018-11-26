@@ -18,8 +18,6 @@ export class InfoPaginaService {
 this.cargarEquipo();
     
    }
-
-
     private cargarInfo(){
 
   this.http.get('assets/data/data-pagina.json')
@@ -27,16 +25,12 @@ this.cargarEquipo();
                this.cargada = true;
             this.info = resp;
       });
-
     }
-
     private cargarEquipo()
     {
        this.http.get('https://angular-html-9e84c.firebaseio.com/equipo.json')
-        .subscribe( (resp: any[])  => {
-              
+        .subscribe( (resp: any[])  => {     
             this.equipo = resp;
-            console.log(resp);
       });
 
     }
